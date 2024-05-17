@@ -1,0 +1,11 @@
+.icon {
+  background-color: gray;
+}
+
+.iconSuccess {
+  background-color: green;
+}
+
+.iconUnsuccess {
+  background-color: red
+}
