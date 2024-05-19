@@ -1,10 +1,10 @@
-// import styles from "./KeyPressed.module.css"
-
+import styles from "./KeyPressed.module.css"
 import { useCallback, useEffect } from "react"
 import { MAP_ERROW_CODES } from "../../constants"
 import { useAppDispatch } from "../../../../app/hooks"
 import { setEnteredValue } from "../../store/slices"
 import { useKeyPressedElement } from "./hooks"
+import { TypographyHeader, TypographyText } from "../../../UI"
 
 export interface IKeyPressedProps {
   isTimerActive: boolean
@@ -35,8 +35,13 @@ const KeyPressed: React.FC<IKeyPressedProps> = (props) => {
 
   return (
     <div>
-      <h3>Нажатая клавиша</h3>
-      <span>{keyPressedElement}</span>
+      <TypographyHeader>Нажатая клавиша</TypographyHeader>
+      <div className={styles.container}>
+        <TypographyText>Нажмите соответствующую стрелку.</TypographyText>
+        <div className={styles.wrapper}>
+          <span className={styles.icon}>{keyPressedElement}</span>
+        </div>
+      </div>
     </div>
   )
 }
